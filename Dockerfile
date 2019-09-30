@@ -70,7 +70,6 @@ WORKDIR /
 RUN cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
 
 WORKDIR $GHOST_INSTALL
-VOLUME $GHOST_CONTENT
 
 COPY docker-entrypoint.sh /usr/local/bin
 ENTRYPOINT ["docker-entrypoint.sh"]
