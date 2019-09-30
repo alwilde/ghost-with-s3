@@ -61,11 +61,18 @@ RUN set -eux; \
 	npm cache clean --force; \
 	rm -rv /tmp/yarn* /tmp/v8*
 
-#Begin S3 install
+#Begin S3 install by setting our workdir
 WORKDIR /var/lib/ghost
+#Make the storage adapter directory
 RUN mkdir -p ./content/adapters/storage
+#Install the s3 adapter npm module
 RUN npm install ghost-storage-adapter-s3
+#Copy the module to our new storage adpater directory
 RUN cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+#Copy a new default config to include our storage adapter
+RUN rm config.production.json
+COPY config.json config.production.json
+COPY config.json config.json
 
 WORKDIR $GHOST_INSTALL
 
