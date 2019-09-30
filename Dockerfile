@@ -70,6 +70,8 @@ RUN cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
 WORKDIR $GHOST_INSTALL
 
 COPY docker-entrypoint.sh /usr/local/bin
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
+    && ln -s /usr/local/bin/docker-entrypoint.sh /
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 2368
