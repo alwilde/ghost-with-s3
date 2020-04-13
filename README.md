@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/awildegit/ghost-with-s3">
-    <img src="images/logo.png" alt="Logo" width="1102" height="157">
+    <img src="https://github.com/awildegit/ghost-with-s3/blob/master/images/logo.png" alt="Ghost With S3 Logo" width="1102" height="157">
   </a>
 
   <h3 align="center">Ghost with S3</h3>
