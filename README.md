@@ -12,7 +12,7 @@
     <br />
     Latest Ghost version: 3.14.0
     <br />
-    <a href="https://cloud.docker.com/u/wilderingrogue/repository/docker/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
+    <a href="https://hub.docker.com/r/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
 </p>
 
@@ -59,7 +59,7 @@ services:
       MYSQL_ROOT_PASSWORD: example`
 ```
 
-Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environmnt variables or the config.json.
+Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environment variables or the config.json.
 
 ## Tags
 The tag :latest will pull the latest working build. 
@@ -67,4 +67,4 @@ You can search the [tag list](https://hub.docker.com/repository/docker/wildering
 A potentially incomplete list of versions include: 3.14.0, 2.38.1, 2.31.1
 
 ## License
-This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapater license for more information.
+This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
