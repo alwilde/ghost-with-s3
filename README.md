@@ -8,9 +8,9 @@
   <h3 align="center">Ghost with S3</h3>
 
   <p align="center">
-    A <a href="">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
+    A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 2.31.1
+    Latest Ghost version: 2.38.1
     <br />
     <a href="https://cloud.docker.com/u/wilderingrogue/repository/docker/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
@@ -30,7 +30,7 @@ Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.co
 ## Tags
 The tag :latest will pull the latest working build. 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
-A potentially incomplete list of versions include: 2.31.1
+A potentially incomplete list of versions include: 2.38.1, 2.31.1
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapater license for more information.
