@@ -1,4 +1,4 @@
-FROM ghost:latest
+FROM ghost:2.31.1
 #^^ Grab the latest offical ghost image. Way easier than building it from scratch as we did before
 #Might as well set myself as the maintainer
 MAINTAINER Al Wilde

@@ -10,7 +10,7 @@
   <p align="center">
     A <a href="">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: XXXX
+    Latest Ghost version: 2.31.1
     <br />
     <a href="https://cloud.docker.com/u/wilderingrogue/repository/docker/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
