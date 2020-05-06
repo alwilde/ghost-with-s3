@@ -10,7 +10,7 @@
   <p align="center">
     A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 2.38.1
+    Latest Ghost version: 3.14.0
     <br />
     <a href="https://cloud.docker.com/u/wilderingrogue/repository/docker/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
@@ -25,12 +25,46 @@ This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM
 Create your own copy of config.json and fill in the values then:
 `docker run -d --name ghost -p 3001:2368 -v /path/to/config.json:/var/lib/ghost/config.json wilderingrogue/ghost-with-s3:latest`
 
+Alternatively, instead of binding to the config file to set your various settings, you can specify them directly through environment variables. Here's a docker-compose example you can apply to the command line if you so choose.
+
+```
+version: '3.1'
+
+services:
+
+  ghost:
+    image: wilderingrogue/ghost-with-s3
+    restart: always
+    ports:
+      - 8080:2368
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: example
+      database__connection__database: ghost
+      storage__active: "s3"
+      AWS_ACCESS_KEY_ID: ""
+      AWS_SECRET_ACCESS_KEY: ""
+	  AWS_DEFAULT_REGION: ""
+	  GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ""
+	  GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ""
+	  GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX: ""
+	  GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ""
+	  GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: ""
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example`
+```
+
 Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environmnt variables or the config.json.
 
 ## Tags
 The tag :latest will pull the latest working build. 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
-A potentially incomplete list of versions include: 2.38.1, 2.31.1
+A potentially incomplete list of versions include: 3.14.0, 2.38.1, 2.31.1
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapater license for more information.
