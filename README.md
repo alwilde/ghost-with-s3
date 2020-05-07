@@ -21,6 +21,8 @@ I couldn't find an up to date Docker image which included some form of S3 adapte
 
 This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM install for the storage adapter, before copying a new config file. The new config file isn't strictly necessary, but it's nice for completeness I guess.
 
+Important note: this imag builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`.
+
 ## Usage
 Create your own copy of config.json and fill in the values then:
 `docker run -d --name ghost -p 3001:2368 -v /path/to/config.json:/var/lib/ghost/config.json wilderingrogue/ghost-with-s3:latest`
@@ -46,12 +48,12 @@ services:
       storage__active: "s3"
       AWS_ACCESS_KEY_ID: ""
       AWS_SECRET_ACCESS_KEY: ""
-	  AWS_DEFAULT_REGION: ""
-	  GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ""
-	  GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ""
-	  GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX: ""
-	  GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ""
-	  GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: ""
+	    AWS_DEFAULT_REGION: ""
+	    GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ""
+	    GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ""
+	    GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX: ""
+	    GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ""
+	    GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: ""
   db:
     image: mysql:5.7
     restart: always
