@@ -17,6 +17,8 @@
 </p>
 
 ## About & Downloading
+Is this image out of date or broken in some way? Tweet me <a href="https://twitter.com/wilderingrogue">@wilderingrogue</a> nad I'll look into it.
+
 I couldn't find an up to date Docker image which included some form of S3 adapter, thus I decided to bundle colinmainke's wonderful adapter with the official image and call it Ghost with S3. It does what it says on the tin.
 
 This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM install for the storage adapter, before copying a new config file. The new config file isn't strictly necessary, but it's nice for completeness I guess.
