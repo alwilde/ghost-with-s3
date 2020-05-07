@@ -21,7 +21,7 @@ I couldn't find an up to date Docker image which included some form of S3 adapte
 
 This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM install for the storage adapter, before copying a new config file. The new config file isn't strictly necessary, but it's nice for completeness I guess.
 
-Important note: this imag builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`.
+Important note: this image builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`.
 
 ## Usage
 Create your own copy of config.json and fill in the values then:
