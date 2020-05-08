@@ -10,14 +10,14 @@
   <p align="center">
     A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 3.15.0
+    Latest Ghost version: 3.15.1
     <br />
     <a href="https://hub.docker.com/r/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
 </p>
 
 ## About & Downloading
-Is this image out of date or broken in some way? Tweet me <a href="https://twitter.com/wilderingrogue">@wilderingrogue</a> nad I'll look into it.
+Is this image out of date or broken in some way? Tweet me <a href="https://twitter.com/wilderingrogue">@wilderingrogue</a> and I'll look into it.
 
 I couldn't find an up to date Docker image which included some form of S3 adapter, thus I decided to bundle colinmainke's wonderful adapter with the official image and call it Ghost with S3. It does what it says on the tin.
 
@@ -68,7 +68,7 @@ Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.co
 ## Tags
 The tag :latest will pull the latest working build. 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
-A potentially incomplete list of versions include: `3.15.0`, `3.14.0`, `2.38.1`, `2.31.1`
+A potentially incomplete list of versions include: `3.15.1`, `3.15.0`, `3.14.0`, `2.38.1`, `2.31.1`
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
