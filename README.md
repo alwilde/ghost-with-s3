@@ -37,7 +37,7 @@ version: '3.1'
 services:
 
   ghost:
-    image: wilderingrogue/ghost-with-s3
+    image: wilderingrogue/ghost-with-s3:latest
     restart: always
     ports:
       - 8080:2368
@@ -66,12 +66,13 @@ services:
 Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environment variables or the config.json.
 
 ## Tags
-The tag `:latest` will pull the latest working build. 
-The tags `:develop` and `develop-alpine` will pull the latest development images. Thesse images are the same as the regular images, but built just before them and tested before the non-development images are built. Probably best not to use them.
+The tag :latest will pull the latest working build. 
 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
 
-A potentially incomplete list of versions include: `3.15.1`, `3.15.0`, `3.14.0`, `2.38.1`, `2.31.1`
+A potentially incomplete list of tags include: `3.15.1`, `3`, , `2.38.1`,
+Alpine also available: `3.15.1-alpine`, `3-alpine`
+
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
