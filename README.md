@@ -10,16 +10,20 @@
   <p align="center">
     A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 3.14.0
+    Latest Ghost version: 3.15.1
     <br />
-    <a href="https://cloud.docker.com/u/wilderingrogue/repository/docker/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
+    <a href="https://hub.docker.com/r/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
 </p>
 
 ## About & Downloading
+Is this image out of date or broken in some way? Tweet me <a href="https://twitter.com/wilderingrogue">@wilderingrogue</a> and I'll look into it.
+
 I couldn't find an up to date Docker image which included some form of S3 adapter, thus I decided to bundle colinmainke's wonderful adapter with the official image and call it Ghost with S3. It does what it says on the tin.
 
 This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM install for the storage adapter, before copying a new config file. The new config file isn't strictly necessary, but it's nice for completeness I guess.
+
+Important note: this image builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`.
 
 ## Usage
 Create your own copy of config.json and fill in the values then:
@@ -46,12 +50,12 @@ services:
       storage__active: "s3"
       AWS_ACCESS_KEY_ID: ""
       AWS_SECRET_ACCESS_KEY: ""
-	  AWS_DEFAULT_REGION: ""
-	  GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ""
-	  GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ""
-	  GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX: ""
-	  GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ""
-	  GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: ""
+	    AWS_DEFAULT_REGION: ""
+	    GHOST_STORAGE_ADAPTER_S3_PATH_BUCKET: ""
+	    GHOST_STORAGE_ADAPTER_S3_ASSET_HOST: ""
+	    GHOST_STORAGE_ADAPTER_S3_PATH_PREFIX: ""
+	    GHOST_STORAGE_ADAPTER_S3_ENDPOINT: ""
+	    GHOST_STORAGE_ADAPTER_S3_FORCE_PATH_STYLE: ""
   db:
     image: mysql:5.7
     restart: always
@@ -59,12 +63,12 @@ services:
       MYSQL_ROOT_PASSWORD: example`
 ```
 
-Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environmnt variables or the config.json.
+Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environment variables or the config.json.
 
 ## Tags
 The tag :latest will pull the latest working build. 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
-A potentially incomplete list of versions include: 3.14.0, 2.38.1, 2.31.1
+A potentially incomplete list of versions include: `3.15.1`, `3.15.0`, `3.14.0`, `2.38.1`, `2.31.1`
 
 ## License
-This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapater license for more information.
+This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
