@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
-FROM ghost:3.31.5
-#^^ Grab the latest offical ghost image. Way easier than building it from scratch as we did before
-=======
 FROM ghost:3.38.3
 #^^ Grab the latest official ghost image. Way easier than building it from scratch as we did before
->>>>>>> Stashed changes
+
 #Might as well set myself as the maintainer
 MAINTAINER Al Wilde
 #Begin S3 install by setting our workdir
