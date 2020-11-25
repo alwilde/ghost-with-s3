@@ -10,7 +10,7 @@
   <p align="center">
     A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 3.15.3 / 3.15.3-alpine
+    Latest Ghost version: 3.38.3 / 3.38.3-alpine
     <br />
     <a href="https://hub.docker.com/r/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
@@ -66,14 +66,13 @@ services:
 Then you'll be up and running. Refer to the [Ghost Docker](https://hub.docker.com/_/ghost) or [Ghost Documentation](https://ghost.org/docs/concepts/config/) for what else you can add to the command line environment variables or the config.json.
 
 ## Tags
-The tag :latest will pull the latest working build. 
+The tag :latest will pull the latest working build.
 
-You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update. 
+You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update.
 
-A potentially incomplete list of tags include: `3.15.3`, `3`, `2.38.1`,
+A potentially incomplete list of tags include: `3.38.3`, `3.15.3`, `3`, `2.38.1`,
 
-Alpine also available: `3.15.3-alpine`, `3-alpine`
-
+Alpine also available: `3.38.3-alpine`, `3.15.3-alpine`, `3-alpine`
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
