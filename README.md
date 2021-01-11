@@ -10,7 +10,7 @@
   <p align="center">
     A <a href="https://hub.docker.com/_/ghost">Ghost</a> Docker image with <a href="https://github.com/colinmeinke">colinmainke</a>/<a href="https://github.com/colinmeinke/ghost-storage-adapter-s3">ghost-storage-adapter-s3</a> bundled in.
     <br />
-    Latest Ghost version: 3.38.3 / 3.38.3-alpine
+    Latest Ghost version: 3.40.5 / 3.40.5-alpine
     <br />
     <a href="https://hub.docker.com/r/wilderingrogue/ghost-with-s3">Download from Dockerhub</a>
   </p>
@@ -23,7 +23,7 @@ I couldn't find an up to date Docker image which included some form of S3 adapte
 
 This Dockerfile simply grabs the latest ghost image from Dockerhub, and runs NPM install for the storage adapter, before copying a new config file. The new config file isn't strictly necessary, but it's nice for completeness I guess.
 
-Important note: this image builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`.
+Important note: this image builds with a config file activating S3 by default. As a result images and media will fail to load if S3 settings haven't been provided via config file or environment variable. If you plan on starting without S3 and adding it later, set the `storage__active: "s3"` environment variable to `storage__active: ""`. Also of note is that the storage adapter only uploads media added to posts and provides no way to upload or access blog themes - these still have to be uploaded and set through the Ghost settings area and are stored within the container. Consider binding "/var/lib/ghost/content/themes/" to a local path for theme persistence. 
 
 ## Usage
 Create your own copy of config.json and fill in the values then:
@@ -70,9 +70,9 @@ The tag :latest will pull the latest working build.
 
 You can search the [tag list](https://hub.docker.com/repository/docker/wilderingrogue/ghost-with-s3/tags "tag list") to find specific versions of Ghost. These are few and far between as ghost-with-s3 does not get rebuilt for every update.
 
-A potentially incomplete list of tags include: `3.38.3`, `3.15.3`, `3`, `2.38.1`,
+A potentially incomplete list of tags include: `3.40.5`, `3.38.3`, `3.15.3`, `3`, `2.38.1`,
 
-Alpine also available: `3.38.3-alpine`, `3.15.3-alpine`, `3-alpine`
+Alpine also available: `3.40.5-alpine`, `3.38.3-alpine`, `3.15.3-alpine`, `3-alpine`
 
 ## License
 This project uses the Unlicense. Refer to the LICENSE file, as well as the Ghost license and storage adapter license for more information.
