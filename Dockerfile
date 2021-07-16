@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-FROM ghost:3.40.5
+FROM ghost:4.9.4
 =======
-FROM ghost:3.38.3
+FROM ghost:4.9.4
 >>>>>>> develop
 #^^ Grab the latest official ghost image. Way easier than building it from scratch as we did before
 
