@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 FROM ghost:4.9.4-alpine
-=======
-FROM ghost:4.9.4-alpine
->>>>>>> develop
 #^^ Grab the latest official ghost image. Way easier than building it from scratch as we did before
 
 #Might as well set myself as the maintainer
